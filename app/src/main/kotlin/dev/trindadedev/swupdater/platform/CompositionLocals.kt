@@ -1,4 +1,4 @@
-package dev.trindadedev.template.platform
+package dev.trindadedev.swupdater.platform
 
 import androidx.compose.runtime.compositionLocalOf
 import androidx.navigation.NavHostController

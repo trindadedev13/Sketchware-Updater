@@ -1,9 +1,9 @@
-import dev.trindadedev.template.build.BuildConfig
-import dev.trindadedev.template.build.VersionUtils
+import dev.trindadedev.swupdater.build.BuildConfig
+import dev.trindadedev.swupdater.build.VersionUtils
 
 plugins {
-  alias(libs.plugins.template.application)
-  alias(libs.plugins.template.compose)
+  alias(libs.plugins.swupdater.application)
+  alias(libs.plugins.swupdater.compose)
   alias(libs.plugins.kotlin.serialization)
 }
 

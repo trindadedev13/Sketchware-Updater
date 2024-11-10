@@ -11,18 +11,18 @@ dependencies {
 
 gradlePlugin {
   plugins {
-    register("template.application") {
-      id = "template.application"
+    register("swupdater.application") {
+      id = "swupdater.application"
       implementationClass = "ApplicationConventionPlugin"
     }
     
-    register("template.library") {
-      id = "template.library"
+    register("swupdater.library") {
+      id = "swupdater.library"
       implementationClass = "LibraryConventionPlugin"
     }
     
-    register("template.compose") {
-      id = "template.compose"
+    register("swupdater.compose") {
+      id = "swupdater.compose"
       implementationClass = "ComposeConventionPlugin"
     }
   }

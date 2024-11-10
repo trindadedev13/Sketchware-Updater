@@ -38,9 +38,9 @@ kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 # Compose
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
-template-application = { id = "template.application", version = "unspecified" }
-template-library = { id = "template.library", version = "unspecified" }
-template-compose = { id = "template.compose", version = "unspecified" }
+swupdater-application = { id = "swupdater.application", version = "unspecified" }
+swupdater-library = { id = "swupdater.library", version = "unspecified" }
+swupdater-compose = { id = "swupdater.compose", version = "unspecified" }
 
 [libraries]
 
