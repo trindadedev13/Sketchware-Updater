@@ -18,7 +18,7 @@ import dev.trindadedev.swupdater.ui.screens.github.models.Commit
 
 import org.koin.androidx.compose.koinViewModel
 
-import coil.compose.AsyncImage
+import coil3.compose.AsyncImage
 
 import kotlinx.datetime.toJavaInstant
 

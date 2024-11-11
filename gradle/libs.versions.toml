@@ -19,6 +19,7 @@ compose-material-icons = "1.7.5"
 compose-viewmodel = "2.8.7"
 
 kotlin-serialization-json = "1.7.3"
+kotlinx-datetime = "0.5.0"
 
 coil-kt = "3.0.2"
 koin = "4.0.0"
@@ -71,6 +72,7 @@ androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecyc
 
 # JetBrains KTX
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlin-serialization-json" }
+kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinx-datetime" }
 
 # Ktor
 ktor-client-android = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }
@@ -78,7 +80,6 @@ ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-conte
 ktor-serialization-kotlix-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 
 slf4j = { group = "org.slf4j", name = "slf4j-android", version.ref = "slf4j" }
-
 
 # Koin
 koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin"}
