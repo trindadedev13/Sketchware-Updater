@@ -18,18 +18,20 @@ import dev.trindadedev.swupdater.extensions.navigateSingleTop
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen() {
-  Scaffold { innerPadding ->
-    Column(
-      modifier = Modifier.padding(innerPadding)
-    ) {
-      ProvideCompositionLocals {
-        BottomNavHost()
+  ProvideCompositionLocals {
+    Scaffold(
+      bottomBar = {
         BottomNavigation()
+      }
+    ) { innerPadding ->
+      Column(
+        modifier = Modifier.padding(innerPadding)
+      ) {
+          BottomNavHost()
       }
     }
   }
 }
-
 @Composable
 private fun BottomNavigation() {
   NavigationBar {
