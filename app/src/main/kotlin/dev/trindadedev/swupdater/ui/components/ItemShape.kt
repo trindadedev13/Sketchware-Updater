@@ -5,12 +5,16 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 
 object ItemShape {
   val Top = RoundedCornerShape(
-    topStart = 10.dp,
-    topEnd = 10.dp
+    topStart = 24.dp,
+    topEnd = 24.dp,
+    bottomStart = 4.dp,
+    bottomEnd = 4.dp
   )
-  val Middle = RoundedCornerShape(0.dp)
+  val Middle = RoundedCornerShape(4.dp)
   val Bottom = RoundedCornerShape(
-    bottomStart = 10.dp,
-    bottomEnd = 10.dp
+    topStart = 4.dp,
+    topEnd = 4.dp,
+    bottomStart = 24.dp,
+    bottomEnd = 24.dp
   )
 }
