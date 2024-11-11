@@ -30,6 +30,6 @@ class GitHubCommitsViewModel(
       owner = Repo.ONWER,
       repo = Repo.NAME
     )
-    SwLog.i(commits.toString())
+    SwLog.i(message = commits.toString())
   }
 }
