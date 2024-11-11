@@ -11,8 +11,8 @@ import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 
-import dev.trindadedev.swupdater.ui.screens.github.GitHubCommitsRepository
-import dev.trindadedev.swupdater.ui.screens.github.GitHubCommitsViewModel
+import dev.trindadedev.swupdater.ui.screens.github.repository.GitHubCommitsRepository
+import dev.trindadedev.swupdater.ui.screens.github.viewmodel.GitHubCommitsViewModel
 
 val GitHubModule = module {
   singleOf(::GitHubCommitsRepository)
