@@ -117,7 +117,7 @@ private fun CommitItem(
         )
       }
       Text(
-        text =" •",
+        text = " •",
         style = MaterialTheme.typography.labelLarge
       )
       Text(
