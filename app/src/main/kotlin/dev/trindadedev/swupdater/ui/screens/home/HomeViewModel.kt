@@ -6,6 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 
 import dev.trindadedev.swupdater.navigation.routes.NightlyBuildsRoute
+import dev.trindadedev.swupdater.navigation.routes.GitHubCommitsRoute
 
 class HomeViewModel: ViewModel() {
   private var _currentRoute by mutableStateOf<Any>(NightlyBuildsRoute)
@@ -15,5 +16,13 @@ class HomeViewModel: ViewModel() {
     
   fun <T: Any> setCurrentRoute(route: T) {
     _currentRoute = route
+  }
+  
+  fun invertCurrentRoute() {
+    if (currentRoute == NightlyBuildsRoute) {
+      setCurrentRoute(GitHubCommitsRoute)
+      return 
+    }
+    setCurrentRoute(NightlyBuildsRoute)
   }
 }

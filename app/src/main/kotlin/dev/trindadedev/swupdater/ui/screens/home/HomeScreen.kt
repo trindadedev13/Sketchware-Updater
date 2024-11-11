@@ -1,5 +1,6 @@
 package dev.trindadedev.swupdater.ui.screens.home
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
@@ -23,6 +24,11 @@ fun HomeScreen(
   viewModel: HomeViewModel
 ) {
   ProvideCompositionLocals {
+    val navController = LocalHomeNavController.current
+    BackHandler {
+      viewModel.invertCurrentRoute()
+      navController.popBackStack()
+    }
     Scaffold(
       bottomBar = {
         BottomNavigation(viewModel)
