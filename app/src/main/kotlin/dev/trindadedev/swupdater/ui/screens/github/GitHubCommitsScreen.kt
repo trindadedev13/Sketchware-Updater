@@ -74,9 +74,8 @@ private fun CommitsList(
       DynamicListItem(
         modifier = Modifier.padding(
           start = 12.dp,
-          end = 20.dp,
-          top = 5.dp,
-          bottom = 20.dp
+          end = 12.dp,
+          bottom = 5.dp
         )
         listLength = items.size - 1,
         currentValue = index
@@ -100,7 +99,7 @@ private fun CommitItem(
       .clickable {
         uriHandler.openUri(commit.url) 
       }
-      .padding(16.dp)
+      .padding(20.dp)
   ) {
     Row(
       horizontalArrangement = Arrangement.spacedBy(8.dp),
