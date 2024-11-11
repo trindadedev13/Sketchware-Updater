@@ -14,7 +14,7 @@ import dev.trindadedev.swupdater.ui.components.TopBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun GitHubCommits() {
+fun GitHubCommitsScreen() {
   val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
   val scrollState = rememberScrollState()
 
