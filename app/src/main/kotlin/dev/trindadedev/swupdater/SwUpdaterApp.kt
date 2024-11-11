@@ -21,7 +21,10 @@ class SwUpdaterApp: Application() {
   fun configureKoin() {
     startKoin {
       androidContext(this@SwUpdaterApp)
-      modules(GeneralModule)
+      modules(
+        GeneralModule,
+        GitHubModule
+      )
     }
   }
 }
