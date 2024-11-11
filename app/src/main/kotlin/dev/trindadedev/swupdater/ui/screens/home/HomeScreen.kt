@@ -56,9 +56,12 @@ private fun <T: Any> RowScope.BottomNavigationItem(
   
   NavigationBarItem(
     selected = viewModel.currentRoute == item.route,
+    alwaysShowLabel = viewModel.currentRoute == item.route,
     onClick = {
-      navController.navigateSingleTop(item.route)
-      viewModel.setCurrentRoute(item.route)
+      if (!viewModel.currentRoute == item.route) {
+        navController.navigateSingleTop(item.route)
+        viewModel.setCurrentRoute(item.route)
+      }
     },
     icon = {
       Icon(
