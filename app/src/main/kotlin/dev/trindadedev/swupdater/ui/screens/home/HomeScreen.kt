@@ -37,23 +37,30 @@ private fun BottomNavigation() {
   val currentRoute = navBackStackEntry?.destination?.route
   NavigationBar {
     BottomNavItem.values().forEach { item ->
-      NavigationItem(
-        selected = currentRoute == item.route,
-        onClick = {
-          navController.navigateSingleTop(item.route)
-        },
-        icon = {
-          Icon(
-            imageVector = item.icon,
-            contentDescription = stringResource(item.labelResId)
-          )
-        },
-        label = {
-          Text(text = stringResource(item.labelResId))
-        }
-      )
+      BottomNavigationItem(item = item)
     }
   }
+}
+
+@Composable
+private fun BottomNavigationItem(
+  item: BottomNavItem
+) {
+  NavigationItem(
+    selected = currentRoute == item.route,
+    onClick = {
+      navController.navigateSingleTop(item.route)
+    },
+    icon = {
+      Icon(
+        imageVector = item.icon(),
+        contentDescription = item.label()
+      )
+    },
+    label = {
+      Text(text = item.label())
+    }
+  )
 }
 
 @Composable

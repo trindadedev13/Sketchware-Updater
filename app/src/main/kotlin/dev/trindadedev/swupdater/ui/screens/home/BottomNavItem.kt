@@ -1,6 +1,7 @@
 package dev.trindadedev.swupdater.ui.screens.home
 
-import androidx.annotation.StringRes
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.material.icons.Icons
@@ -16,17 +17,25 @@ import dev.trindadedev.swupdater.navigation.routes.GitHubCommitsRoute
  */
 sealed class BottomNavItem<T>(
   val route: T,
-  val icon: ImageVector,
-  @StringRes val labelResId: Int
+  val icon: @Composable () -> ImageVector, 
+  val label: @Composable () -> String
 ) {
   object NightlyBuilds: BottomNavItem<NightlyBuildsRoute>(
     route = NightlyBuildsRoute,
-    icon = Icons.Rounded.BuildCircle,
-    labelResId = Strings.label_nightly_builds
+    icon = {
+      Icons.Rounded.BuildCircle
+    },
+    label = {
+      stringResource(Strings.label_nightly_builds) 
+    }
   )
   object GitHubCommits: BottomNavItem<GitHubCommitsRoute>(
     route = GitHubCommitsRoute,
-    icon = ImageVector.vectorResource(Drawables.ic_github),
-    labelResId = Strings.label_github_commits
+    icon = {
+      ImageVector.vectorResource(Drawables.ic_github) 
+    },
+    label = {
+      stringResource(Strings.label_github_commits)
+    }
   )
 }
