@@ -15,6 +15,8 @@ import dev.trindadedev.swupdater.navigation.BottomNavHost
 import dev.trindadedev.swupdater.platform.LocalHomeNavController
 import dev.trindadedev.swupdater.extensions.navigateSingleTop
 
+import org.koin.androidx.compose.koinViewModel
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen() {
@@ -34,24 +36,29 @@ fun HomeScreen() {
 }
 @Composable
 private fun BottomNavigation() {
+  val viewModel = koinViewModel<HomeViewModel>()
   NavigationBar {
     BottomNavItem.toList().forEach { item ->
-      BottomNavigationItem(item = item)
+      BottomNavigationItem(
+        item = item,
+        viewModel = viewModel
+      )
     }
   }
 }
 
 @Composable
 private fun <T: Any> RowScope.BottomNavigationItem(
-  item: BottomNavItem<T>
+  item: BottomNavItem<T>,
+  viewModel: HomeViewModel
 ) {
   val navController = LocalHomeNavController.current
-  val navBackStackEntry = navController.currentBackStackEntry
-  val currentRoute = navBackStackEntry?.destination?.route
+  
   NavigationBarItem(
-    selected = currentRoute == item.route,
+    selected = viewModel.currentRoute == item.route,
     onClick = {
       navController.navigateSingleTop(item.route)
+      viewModel.setCurrentRoute(item.route)
     },
     icon = {
       Icon(
