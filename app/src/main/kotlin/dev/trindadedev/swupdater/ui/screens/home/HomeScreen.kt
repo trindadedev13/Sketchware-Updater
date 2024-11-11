@@ -43,8 +43,8 @@ private fun BottomNavigation() {
 }
 
 @Composable
-private fun BottomNavigationItem(
-  item: BottomNavItem
+private fun <T> BottomNavigationItem(
+  item: BottomNavItem<T>
 ) {
   NavigationBarItem(
     selected = currentRoute == item.route,
