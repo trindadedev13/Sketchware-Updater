@@ -16,6 +16,7 @@ import dev.trindadedev.swupdater.Strings
 import dev.trindadedev.swupdater.ui.components.TopBar
 import dev.trindadedev.swupdater.ui.screens.github.models.Commit
 import dev.trindadedev.swupdater.ui.screens.github.viewmodel.GitHubCommitsViewModel
+import dev.trindadedev.swupdater.ui.components.DynamicListItem
 
 import org.koin.androidx.compose.koinViewModel
 
