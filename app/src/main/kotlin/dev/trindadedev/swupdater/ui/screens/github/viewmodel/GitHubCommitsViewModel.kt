@@ -26,7 +26,7 @@ class GitHubCommitsViewModel(
   
   private suspend fun getCommits() {
     _commits.value = repository.getCommits(
-      onwer = Repo.ONWER,
+      owner = Repo.ONWER,
       repo = Repo.NAME
     )
   }
