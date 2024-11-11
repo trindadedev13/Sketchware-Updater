@@ -72,4 +72,6 @@ dependencies {
   implementation(libs.koin.androidx.compose)
   
   implementation(libs.slf4j)
+  
+  implementation(libs.gson)
 }
