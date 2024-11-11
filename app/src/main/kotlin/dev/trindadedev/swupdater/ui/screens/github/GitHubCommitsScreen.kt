@@ -22,8 +22,6 @@ import dev.trindadedev.swupdater.ui.screens.github.models.Commit
 import dev.trindadedev.swupdater.ui.screens.github.viewmodel.GitHubCommitsViewModel
 import dev.trindadedev.swupdater.ui.components.DynamicListItem
 
-import org.koin.androidx.compose.koinViewModel
-
 import coil3.compose.AsyncImage
 
 import kotlinx.datetime.toJavaInstant
@@ -33,9 +31,10 @@ import java.util.Date
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun GitHubCommitsScreen() {
+fun GitHubCommitsScreen(
+  viewModel: GitHubCommitsViewModel
+) {
   val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
-  val viewModel = koinViewModel<GitHubCommitsViewModel>()
   
   Scaffold(
     modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),

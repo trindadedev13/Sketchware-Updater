@@ -19,11 +19,13 @@ import org.koin.androidx.compose.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+  viewModel: HomeViewModel
+) {
   ProvideCompositionLocals {
     Scaffold(
       bottomBar = {
-        BottomNavigation()
+        BottomNavigation(viewModel)
       }
     ) {
       BottomNavHost()
@@ -31,8 +33,9 @@ fun HomeScreen() {
   }
 }
 @Composable
-private fun BottomNavigation() {
-  val viewModel = koinViewModel<HomeViewModel>()
+private fun BottomNavigation(
+  viewModel: HomeViewModel
+) {
   NavigationBar {
     BottomNavItem.toList().forEach { item ->
       BottomNavigationItem(

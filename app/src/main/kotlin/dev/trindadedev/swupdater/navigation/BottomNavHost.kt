@@ -13,6 +13,9 @@ import dev.trindadedev.swupdater.navigation.routes.GitHubCommitsRoute
 import dev.trindadedev.swupdater.ui.animations.navigation.NavigationAnimationTransitions
 import dev.trindadedev.swupdater.ui.screens.nightly.NightlyBuildsScreen
 import dev.trindadedev.swupdater.ui.screens.github.GitHubCommitsScreen
+import dev.trindadedev.swupdater.ui.screens.github.viewmodel.GitHubCommitsViewModel
+
+import org.koin.androidx.compose.koinViewModel
 
 import kotlin.reflect.typeOf
 
@@ -33,7 +36,8 @@ fun BottomNavHost() {
     }
     
     composable<GitHubCommitsRoute> {
-      GitHubCommitsScreen()
+      val viewModel = koinViewModel<GitHubCommitsViewModel>()
+      GitHubCommitsScreen(viewModel)
     }
   }
 }

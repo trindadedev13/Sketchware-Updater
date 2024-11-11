@@ -11,6 +11,9 @@ import dev.trindadedev.swupdater.navigation.routes.HomeRoute
 import dev.trindadedev.swupdater.platform.LocalMainNavController
 import dev.trindadedev.swupdater.ui.animations.navigation.NavigationAnimationTransitions
 import dev.trindadedev.swupdater.ui.screens.home.HomeScreen
+import dev.trindadedev.swupdater.ui.screens.home.HomeViewModel
+
+import org.koin.androidx.compose.koinViewModel
 
 import kotlin.reflect.typeOf
 
@@ -27,6 +30,7 @@ fun MainNavHost() {
     popExitTransition = { NavigationAnimationTransitions.popExitTransition },
   ) {
     composable<HomeRoute> {
+      val viewModel = koinViewModel<HomeViewModel>()
       HomeScreen()
     }
   }
