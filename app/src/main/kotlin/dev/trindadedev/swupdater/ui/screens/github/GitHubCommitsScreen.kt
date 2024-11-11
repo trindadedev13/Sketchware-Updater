@@ -51,6 +51,7 @@ fun GitHubCommitsScreen(
     CommitsList(
       modifier = Modifier
         .padding(innerPadding)
+        .padding(bottom = 15.dp)
         .fillMaxSize(),
       items = viewModel.commits
     )
