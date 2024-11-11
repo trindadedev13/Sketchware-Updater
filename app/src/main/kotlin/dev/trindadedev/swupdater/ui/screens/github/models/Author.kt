@@ -2,6 +2,7 @@ package dev.trindadedev.swupdater.ui.screens.github.models
 
 import kotlinx.datetime.Instant
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.SerialName
 
 @Serializable
 data class Author(
