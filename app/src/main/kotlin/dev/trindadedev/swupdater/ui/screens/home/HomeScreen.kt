@@ -32,9 +32,6 @@ fun HomeScreen() {
 
 @Composable
 private fun BottomNavigation() {
-  val navController = LocalHomeNavController.current
-  val navBackStackEntry = navController.currentBackStackEntry
-  val currentRoute = navBackStackEntry?.destination?.route
   NavigationBar {
     BottomNavItem.toList().forEach { item ->
       BottomNavigationItem(item = item)
@@ -46,6 +43,9 @@ private fun BottomNavigation() {
 private fun <T> RowScope.BottomNavigationItem(
   item: BottomNavItem<T>
 ) {
+  val navController = LocalHomeNavController.current
+  val navBackStackEntry = navController.currentBackStackEntry
+  val currentRoute = navBackStackEntry?.destination?.route
   NavigationBarItem(
     selected = currentRoute == item.route,
     onClick = {
