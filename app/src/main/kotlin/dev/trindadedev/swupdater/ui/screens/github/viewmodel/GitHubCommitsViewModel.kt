@@ -9,9 +9,9 @@ import androidx.lifecycle.viewModelScope
 import dev.trindadedev.swupdater.ui.screens.github.models.Commit
 import dev.trindadedev.swupdater.ui.screens.github.repository.GitHubCommitsRepository
 
-class GitHubCommitsViewModel: ViewModel(
+class GitHubCommitsViewModel(
   private val repository: GitHubCommitsRepository
-) {
+): ViewModel() {
   private var _commits = mutableStateOf<List<Commit>>(emptyList())
   val commits: List<Commit>
     get() = _commits
