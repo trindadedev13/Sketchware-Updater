@@ -24,6 +24,7 @@ fun GitHubCommitsScreen() {
       TopBar(
         title = { Text(stringResource(id = Strings.label_github_commits)) },
         scrollBehavior = scrollBehavior,
+        isLarge = true
       )
     },
   ) { innerPadding ->

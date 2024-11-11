@@ -24,6 +24,7 @@ fun NightlyBuildsScreen() {
       TopBar(
         title = { Text(stringResource(id = Strings.label_nightly_builds)) },
         scrollBehavior = scrollBehavior,
+        isLarge = true
       )
     },
   ) { innerPadding ->
