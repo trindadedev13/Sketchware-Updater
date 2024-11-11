@@ -15,7 +15,7 @@ import dev.trindadedev.swupdater.navigation.routes.GitHubCommitsRoute
 /*
  * HomeScreen BottomNavigation itens
  */
-sealed class BottomNavItem<T>(
+sealed class BottomNavItem<T: Any>(
   val route: T,
   val icon: @Composable () -> ImageVector, 
   val label: @Composable () -> String

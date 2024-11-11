@@ -40,7 +40,7 @@ private fun BottomNavigation() {
 }
 
 @Composable
-private fun <T> RowScope.BottomNavigationItem(
+private fun <T: Any> RowScope.BottomNavigationItem(
   item: BottomNavItem<T>
 ) {
   val navController = LocalHomeNavController.current
