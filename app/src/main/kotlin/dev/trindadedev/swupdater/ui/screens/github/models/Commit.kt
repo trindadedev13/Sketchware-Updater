@@ -8,4 +8,5 @@ data class Commit(
   @SerialName("sha") val sha: String,
   @SerialName("commit") val info: CommitInfo,
   @SerialName("html_url") val url: String
+  @SerialName("author") val fullAuthor: FullAuthor
 )

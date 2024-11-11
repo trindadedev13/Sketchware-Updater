@@ -110,7 +110,7 @@ private fun CommitItem(
         verticalAlignment = Alignment.CenterVertically
       ) {
         AsyncImage(
-          model = commit.info.author.avatar,
+          model = commit.fullAuthor.avatar,
           contentDescription = commit.info.author.name,
           modifier = Modifier
             .size(20.dp)

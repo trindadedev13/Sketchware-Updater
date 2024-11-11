@@ -6,6 +6,13 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Author(
   val name: String,
-  val date: Instant,
-  val avatar: String = "https://github.com/$name.png"
+  val date: Instant
+)
+
+/*
+ * This author have more info
+ */
+@Serializable
+data class FullAuthor(
+  @SerialName("avatar_url") val avatar: String
 )
