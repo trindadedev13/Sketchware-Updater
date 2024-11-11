@@ -15,6 +15,7 @@ import androidx.compose.ui.platform.LocalUriHandler
 import dev.trindadedev.swupdater.Strings
 import dev.trindadedev.swupdater.ui.components.TopBar
 import dev.trindadedev.swupdater.ui.screens.github.models.Commit
+import dev.trindadedev.swupdater.ui.screens.github.viewmodel.GitHubCommitsViewModel
 
 import org.koin.androidx.compose.koinViewModel
 
@@ -30,7 +31,7 @@ import java.util.Date
 fun GitHubCommitsScreen() {
   val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
   val listState = rememberLazyListState()
-  val viewModel = koinViewModel<HomeViewModel>()
+  val viewModel = koinViewModel<GitHubCommitsViewModel>()
   
   Scaffold(
     modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
