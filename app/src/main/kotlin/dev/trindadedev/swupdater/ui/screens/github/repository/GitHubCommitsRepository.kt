@@ -1,8 +1,8 @@
 package dev.trindadedev.swupdater.ui.screens.github.repository
 
 import io.ktor.client.HttpClient
-
-import kotlinx.coroutines.runBlocking
+import io.ktor.client.call.body
+import io.ktor.client.request.get
 
 import dev.trindadedev.swupdater.ui.screens.github.models.Commit
 
