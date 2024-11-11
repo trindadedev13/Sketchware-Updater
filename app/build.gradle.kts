@@ -62,6 +62,7 @@ dependencies {
   implementation(libs.coil.network.okhttp)
     
   implementation(libs.kotlinx.serialization.json)
+  implementation(libs.kotlinx.datetime)
   
   implementation(libs.ktor.client.android)
   implementation(libs.ktor.client.content.negotiation)
