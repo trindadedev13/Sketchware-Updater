@@ -16,7 +16,7 @@ class GitHubCommitsViewModel(
 ): ViewModel() {
   private var _commits = mutableStateOf<List<Commit>>(emptyList())
   val commits: List<Commit>
-    get() = _commits
+    get() = _commits.value
     
   init {
     viewModelScope.launch {
