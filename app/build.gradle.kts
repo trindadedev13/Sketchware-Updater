@@ -62,7 +62,13 @@ dependencies {
   implementation(libs.coil.network.okhttp)
     
   implementation(libs.kotlinx.serialization.json)
+  
+  implementation(libs.ktor.client.android)
+  implementation(libs.ktor.client.content.negotiation)
+  implementation(libs.ktor.serialization.kotlix.json)
     
   implementation(libs.koin.android)
   implementation(libs.koin.androidx.compose)
+  
+  implementation(libs.slf4j)
 }

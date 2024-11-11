@@ -3,6 +3,7 @@ package dev.trindadedev.swupdater
 import android.app.Application
 
 import dev.trindadedev.swupdater.di.GeneralModule
+import dev.trindadedev.swupdater.di.GitHubModule
 
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
