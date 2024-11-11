@@ -33,7 +33,7 @@ fun HomeScreen() {
 @Composable
 private fun BottomNavigation() {
   val navController = LocalHomeNavController.current
-  val navBackStackEntry by navController.currentBackStackEntryAsState()
+  val navBackStackEntry by navController.currentBackStackEntry
   val currentRoute = navBackStackEntry?.destination?.route
   BottomNavigation {
     BottomNavItem.values().forEach { item ->
