@@ -6,7 +6,6 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 
-import dev.trindadedev.swupdater.utils.SwLog
 import dev.trindadedev.swupdater.ui.screens.github.models.Commit
 import dev.trindadedev.swupdater.ui.screens.github.repository.GitHubCommitsRepository
 
@@ -30,6 +29,5 @@ class GitHubCommitsViewModel(
       owner = Repo.ONWER,
       repo = Repo.NAME
     )
-    SwLog.i(message = commits.toString())
   }
 }
