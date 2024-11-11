@@ -58,7 +58,7 @@ private fun <T: Any> RowScope.BottomNavigationItem(
     selected = viewModel.currentRoute == item.route,
     alwaysShowLabel = viewModel.currentRoute == item.route,
     onClick = {
-      if (!viewModel.currentRoute == item.route) {
+      if (!(viewModel.currentRoute == item.route)) {
         navController.navigateSingleTop(item.route)
         viewModel.setCurrentRoute(item.route)
       }
