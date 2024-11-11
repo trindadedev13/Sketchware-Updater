@@ -72,6 +72,12 @@ private fun CommitsList(
   ) {
     itemsIndexed(items) { index, item ->
       DynamicListItem(
+        modifier = Modifier.padding(
+          start = 12.dp,
+          end = 20.dp,
+          top = 5.dp,
+          bottom = 20.dp
+        )
         listLength = items.size - 1,
         currentValue = index
       ) {
