@@ -38,4 +38,13 @@ sealed class BottomNavItem<T>(
       stringResource(Strings.label_github_commits)
     }
   )
+  
+  companion object {
+    fun toList(): List<BottomNavItem<*>> {
+      return listOf(
+        NightlyBuilds,
+        GitHubCommits
+      )
+    }
+  }
 }
