@@ -2,7 +2,7 @@ package dev.trindadedev.swupdater.ui.screens.home
 
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.icons.rounded.BuildCircle
+import androidx.compose.material.icons.rounded.BuildCircle
 
 import dev.trindadedev.swupdater.Strings
 import dev.trindadedev.swupdater.Drawables
