@@ -26,6 +26,6 @@ sealed class BottomNavItem<T>(
   object GitHubCommits: BottomNavItem<GitHubCommitsRoute>(
     route = GitHubCommitsRoute,
     icon = ImageVector.vectorResource(Drawables.ic_github),
-    label = Strings.label_git_commits
+    label = Strings.label_github_commits
   )
 }
