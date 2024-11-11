@@ -12,6 +12,7 @@ import androidx.compose.ui.layout.*
 import androidx.compose.ui.res.*
 import androidx.compose.ui.text.style.*
 import androidx.compose.ui.unit.*
+import androidx.compose.ui.draw.*
 import androidx.compose.ui.platform.LocalUriHandler
 
 import dev.trindadedev.swupdater.Strings
