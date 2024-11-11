@@ -45,11 +45,11 @@ private fun BottomNavigation() {
         icon = {
           Icon(
             imageVector = item.icon,
-            contentDescription = null
+            contentDescription = stringResource(item.labelResId)
           )
         },
         label = {
-          Text(text = item.label)
+          Text(text = stringResource(item.labelResId))
         }
       )
     }
