@@ -28,7 +28,7 @@ class MainActivity : ComponentActivity() {
           modifier = Modifier.fillMaxSize(), 
           color = MaterialTheme.colorScheme.background
         ) {
-          ProvideMainCompositionLocals {
+          ProvideCompositionLocals {
             MainNavHost() 
           }
         }
@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
   }
 
   @Composable
-  private fun ProvideMainCompositionLocals(content: @Composable () -> Unit) {
+  private fun ProvideCompositionLocals(content: @Composable () -> Unit) {
     val navController = rememberNavController()
 
     CompositionLocalProvider(

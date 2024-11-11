@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_name">SwUpdater</string>
+  <string name="label_nightly_builds">Nightly Builds</string>
+  <string name="label_github_commits">GitHub Commits</string>
 </resources>

@@ -8,31 +8,62 @@ import androidx.compose.ui.*
 import androidx.compose.ui.input.nestedscroll.*
 import androidx.compose.ui.layout.*
 import androidx.compose.ui.res.*
+import androidx.navigation.compose.rememberNavController
 
 import dev.trindadedev.swupdater.Strings
-import dev.trindadedev.swupdater.ui.components.TopBar
+import dev.trindadedev.swupdater.navigation.BottomNavHost
+import dev.trindadedev.swupdater.platform.LocalHomeNavController
+import dev.trindadedev.swupdater.extensions.navigateSingleTop
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen() {
-  val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
-  val scrollState = rememberScrollState()
-
-  Scaffold(
-    modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-    topBar = {
-      TopBar(
-        title = { Text(stringResource(id = Strings.app_name)) },
-        scrollBehavior = scrollBehavior,
-      )
-    },
-  ) { innerPadding ->
+  Scaffold { innerPadding ->
     Column(
-      Modifier
-        .padding(innerPadding)
-        .verticalScroll(scrollState)
+      modifier = Modifier.padding(innerPadding)
     ) {
-      
+      ProvideCompositionLocals {
+        BottomNavHost()
+        BottomNavigation()
+      }
     }
   }
+}
+
+@Composable
+private fun BottomNavigation() {
+  val navController = LocalHomeNavController.current
+  val navBackStackEntry by navController.currentBackStackEntryAsState()
+  val currentRoute = navBackStackEntry?.destination?.route
+  BottomNavigation {
+    BottomNavItem.values().forEach { item ->
+      BottomNavigationItem(
+        selected = currentRoute == item.route,
+        onClick = {
+          navController.navigateSingleTop(item.route)
+        },
+        icon = {
+          Icon(
+            imageVector = item.icon,
+            contentDescription = null
+          )
+        },
+        label = {
+          Text(text = item.label)
+        }
+      )
+    }
+  }
+}
+
+@Composable
+private fun ProvideCompositionLocals(
+  content: @Composable () -> Unit
+) {
+  val navController = rememberNavController()
+
+  CompositionLocalProvider(
+    LocalHomeNavController provides navController, 
+    content = content
+  )
 }
