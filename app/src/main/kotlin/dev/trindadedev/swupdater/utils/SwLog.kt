@@ -1,19 +1,22 @@
 package dev.trindadedev.swupdater.utils
 
 import android.util.Log
-
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.concurrent.atomic.AtomicBoolean
 
-class SwLog {
-  companion object {
-    const val DefaultTag = "SwUpdater"
+object SwLog {
+  const val DefaultTag = "SwUpdater"
+
+  private val dateFormat = ThreadLocal.withInitial {
+    SimpleDateFormat(
+      "yyyy-MM-dd HH:mm:ss",
+      Locale.getDefault()
+    )
   }
-  
-  private val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
 
   private fun getFormattedMessage(message: String): String {
-    val timestamp = dateFormat.format(Date())
+    val timestamp = dateFormat.get().format(Date())
     return "[$timestamp] $message"
   }
 
@@ -32,8 +35,8 @@ class SwLog {
     }
   }
 
-  fun i(tag: String = DefaultTag, message: String) = log(Log.INFO, tag, message)
-  fun d(tag: String = DefaultTag, message: String) = log(Log.DEBUG, tag, message)
-  fun e(tag: String = DefaultTag, message: String) = log(Log.ERROR, tag, message)
-  fun w(tag: String = DefaultTag, message: String) = log(Log.WARN, tag, message)
+  @JvmStatic fun i(tag: String = DefaultTag, message: String) = log(Log.INFO, tag, message)
+  @JvmStatic fun d(tag: String = DefaultTag, message: String) = log(Log.DEBUG, tag, message)
+  @JvmStatic fun e(tag: String = DefaultTag, message: String) = log(Log.ERROR, tag, message)
+  @JvmStatic fun w(tag: String = DefaultTag, message: String) = log(Log.WARN, tag, message)
 }
