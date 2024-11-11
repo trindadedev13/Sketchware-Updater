@@ -43,7 +43,7 @@ private fun BottomNavigation() {
 }
 
 @Composable
-private fun <T> BottomNavigationItem(
+private fun <T> RowScope.BottomNavigationItem(
   item: BottomNavItem<T>
 ) {
   NavigationBarItem(
