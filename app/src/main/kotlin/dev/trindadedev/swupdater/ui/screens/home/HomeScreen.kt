@@ -46,7 +46,7 @@ private fun BottomNavigation() {
 private fun BottomNavigationItem(
   item: BottomNavItem
 ) {
-  NavigationItem(
+  NavigationBarItem(
     selected = currentRoute == item.route,
     onClick = {
       navController.navigateSingleTop(item.route)
