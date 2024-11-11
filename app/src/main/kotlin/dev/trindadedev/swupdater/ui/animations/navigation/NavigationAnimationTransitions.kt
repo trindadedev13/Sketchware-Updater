@@ -1,35 +1,22 @@
 package dev.trindadedev.swupdater.ui.animations.navigation
 
-import soup.compose.material.motion.animation.materialSharedAxisYIn
-import soup.compose.material.motion.animation.materialSharedAxisYOut
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
 
 object NavigationAnimationTransitions {
 
   val enterTransition =
-    materialSharedAxisYIn(
-      forward = true,
-      slideDistance = NavigationAnimationValues.SlideDistance,
-      durationMillis = NavigationAnimationValues.SlideDuration,
-    )
+    fadeIn(tween(250)) + slideInVertically { it / 2 }
 
   val exitTransition =
-    materialSharedAxisYOut(
-      forward = true,
-      slideDistance = NavigationAnimationValues.SlideDistance,
-      durationMillis = NavigationAnimationValues.SlideDuration,
-    )
+    fadeOut(tween(200)) + slideOutVertically { -it / 2 }
 
   val popEnterTransition =
-    materialSharedAxisYIn(
-      forward = false,
-      slideDistance = NavigationAnimationValues.SlideDistance,
-      durationMillis = NavigationAnimationValues.SlideDuration,
-    )
+    fadeIn(tween(250)) + slideInVertically { -it / 2 }
 
   val popExitTransition =
-    materialSharedAxisYOut(
-      forward = false,
-      slideDistance = NavigationAnimationValues.SlideDistance,
-      durationMillis = NavigationAnimationValues.SlideDuration,
-    )
+    fadeOut(tween(200)) + slideOutVertically { it / 2 }
 }
