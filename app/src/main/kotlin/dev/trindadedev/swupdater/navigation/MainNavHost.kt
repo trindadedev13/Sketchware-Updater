@@ -31,7 +31,7 @@ fun MainNavHost() {
   ) {
     composable<HomeRoute> {
       val viewModel = koinViewModel<HomeViewModel>()
-      HomeScreen()
+      HomeScreen(viewModel)
     }
   }
 }
