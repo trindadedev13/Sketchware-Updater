@@ -25,12 +25,8 @@ fun HomeScreen() {
       bottomBar = {
         BottomNavigation()
       }
-    ) { innerPadding ->
-      Column(
-        modifier = Modifier.padding(innerPadding)
-      ) {
-          BottomNavHost()
-      }
+    ) {
+      BottomNavHost()
     }
   }
 }
