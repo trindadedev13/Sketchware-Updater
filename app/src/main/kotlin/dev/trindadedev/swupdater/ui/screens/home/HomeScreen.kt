@@ -35,9 +35,9 @@ private fun BottomNavigation() {
   val navController = LocalHomeNavController.current
   val navBackStackEntry by navController.currentBackStackEntry
   val currentRoute = navBackStackEntry?.destination?.route
-  BottomNavigation {
+  NavigationBar {
     BottomNavItem.values().forEach { item ->
-      BottomNavigationItem(
+      NavigationItem(
         selected = currentRoute == item.route,
         onClick = {
           navController.navigateSingleTop(item.route)
