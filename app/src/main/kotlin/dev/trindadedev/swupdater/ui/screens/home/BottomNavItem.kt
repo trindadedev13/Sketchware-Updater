@@ -17,12 +17,12 @@ sealed class BottomNavItem<T>(
   val icon: ImageVector,
   val label: String
 ) {
-  object NightlyBuilds: BottomNavItem(
+  object NightlyBuilds: BottomNavItem<NightlyBuildsRoute>(
     route = NightlyBuildsRoute,
     icon = Icons.Rounded.BuildCircle,
     label = Strings.label_nightly_builds
   )
-  object GitHubCommits: BottomNavItem(
+  object GitHubCommits: BottomNavItem<GitHubCommitsRoute>(
     route = GitHubCommitsRoute,
     icon = ImageVector.vectorResource(Drawables.ic_git),
     label = Strings.label_git_commits
