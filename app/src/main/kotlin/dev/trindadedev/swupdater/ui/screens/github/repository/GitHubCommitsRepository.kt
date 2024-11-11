@@ -21,7 +21,7 @@ class GitHubCommitsRepository(
       
       val response = client.get(url)
 
-      if (response.status.isSuccess()) {
+      if (response.status.value in 200..299) {
         val commits: List<Commit> = response.body()
         SwLog.d(message = "Response: ${commits.toString()}")
         commits
