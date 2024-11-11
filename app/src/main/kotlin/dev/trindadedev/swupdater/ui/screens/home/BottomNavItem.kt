@@ -22,7 +22,7 @@ sealed class BottomNavItem<T>(
     icon = Icons.Rounded.BuildCircle,
     label = Strings.label_nightly_builds
   )
-  object GitCommits: BottomNavItem(
+  object GitHubCommits: BottomNavItem(
     route = GitHubCommitsRoute,
     icon = ImageVector.vectorResource(Drawables.ic_git),
     label = Strings.label_git_commits
