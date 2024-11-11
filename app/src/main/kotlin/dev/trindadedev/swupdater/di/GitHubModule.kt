@@ -15,7 +15,9 @@ import dev.trindadedev.swupdater.ui.screens.github.repository.GitHubCommitsRepos
 import dev.trindadedev.swupdater.ui.screens.github.viewmodel.GitHubCommitsViewModel
 
 val GitHubModule = module {
-  singleOf(::GitHubCommitsRepository)
+  single {
+    GitHubCommitsRepository(get())
+  }
   viewModelOf(::GitHubCommitsViewModel)
   single {
     HttpClient(Android) {
