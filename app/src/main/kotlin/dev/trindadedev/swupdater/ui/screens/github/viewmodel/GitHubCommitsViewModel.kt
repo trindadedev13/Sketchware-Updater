@@ -9,6 +9,8 @@ import androidx.lifecycle.viewModelScope
 import dev.trindadedev.swupdater.ui.screens.github.models.Commit
 import dev.trindadedev.swupdater.ui.screens.github.repository.GitHubCommitsRepository
 
+import kotlinx.coroutines.launch
+
 class GitHubCommitsViewModel(
   private val repository: GitHubCommitsRepository
 ): ViewModel() {
