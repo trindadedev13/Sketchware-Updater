@@ -34,8 +34,7 @@ import java.util.Date
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun GitHubCommitsScreen() {
-  val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
-  val listState = rememberLazyListState()
+  val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
   val viewModel = koinViewModel<GitHubCommitsViewModel>()
   
   Scaffold(
@@ -54,8 +53,7 @@ fun GitHubCommitsScreen() {
       modifier = Modifier
         .padding(innerPadding)
         .fillMaxSize(),
-      items = viewModel.commits,
-      listState = listState 
+      items = viewModel.commits
     )
   }
 }
@@ -63,12 +61,10 @@ fun GitHubCommitsScreen() {
 @Composable
 private fun CommitsList(
   modifier: Modifier = Modifier,
-  items: List<Commit>,
-  listState: LazyListState 
+  items: List<Commit>
 ) {
   LazyColumn(
-    modifier = modifier,
-    state = listState
+    modifier = modifier
   ) {
     itemsIndexed(items) { index, item ->
       DynamicListItem(
@@ -85,7 +81,6 @@ private fun CommitsList(
     }
   }
 }
-
 
 @Composable
 private fun CommitItem(
