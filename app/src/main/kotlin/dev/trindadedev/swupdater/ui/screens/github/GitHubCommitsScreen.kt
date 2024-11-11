@@ -76,7 +76,7 @@ private fun CommitsList(
           start = 12.dp,
           end = 12.dp,
           bottom = 5.dp
-        )
+        ),
         listLength = items.size - 1,
         currentValue = index
       ) {
