@@ -25,10 +25,6 @@ fun HomeScreen(
 ) {
   ProvideCompositionLocals {
     val navController = LocalHomeNavController.current
-    BackHandler {
-      viewModel.invertCurrentRoute()
-      navController.popBackStack()
-    }
     Scaffold(
       bottomBar = {
         BottomNavigation(viewModel)

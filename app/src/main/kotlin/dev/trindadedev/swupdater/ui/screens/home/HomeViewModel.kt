@@ -17,12 +17,4 @@ class HomeViewModel: ViewModel() {
   fun <T: Any> setCurrentRoute(route: T) {
     _currentRoute = route
   }
-  
-  fun invertCurrentRoute() {
-    if (currentRoute == NightlyBuildsRoute) {
-      setCurrentRoute(GitHubCommitsRoute)
-      return 
-    }
-    setCurrentRoute(NightlyBuildsRoute)
-  }
 }
