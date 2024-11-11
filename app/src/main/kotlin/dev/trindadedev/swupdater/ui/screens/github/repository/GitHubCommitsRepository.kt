@@ -17,14 +17,22 @@ class GitHubCommitsRepository(
   ): List<Commit> {
     return try {
       val url = "${Consts.BASE_URL}/$owner/$repo/commits"
-      SwLog.d(message = "URL: ${url}")
-      val response: List<Commit> = client.get(url).body()
-      SwLog.d(message = "Response: ${response.toString()}")
-      response
+      SwLog.d(message = "URL: $url")
+      
+      val response = client.get(url)
+
+      if (response.status.isSuccess()) {
+        val commits: List<Commit> = response.body()
+        SwLog.d(message = "Response: ${commits.toString()}")
+        commits
+      } else {
+        SwLog.d(message = "Request failed with status: ${response.status}")
+        emptyList()
+      }
+      
     } catch (e: Exception) {
+      SwLog.e(message = "Error: ${e.message}")
       emptyList()
-    } finally {
-      client.close()
     }
   }
 }
