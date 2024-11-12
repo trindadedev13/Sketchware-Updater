@@ -75,7 +75,7 @@ private fun CommitsList(
         ),
         colors = CardDefaults.cardColors(
           containerColor = MaterialTheme.colorScheme.surfaceContainerLow
-        )
+        ),
         listLength = items.size - 1,
         currentValue = index
       ) {
