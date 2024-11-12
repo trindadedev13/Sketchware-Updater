@@ -11,6 +11,7 @@ fun DynamicListItem(
   modifier: Modifier = Modifier,
   listLength: Int,
   currentValue: Int,
+  colors: CardColors = CardDefaults.cardColors(),
   content: @Composable () -> Unit,
 ) {
   val shape = when (currentValue) {

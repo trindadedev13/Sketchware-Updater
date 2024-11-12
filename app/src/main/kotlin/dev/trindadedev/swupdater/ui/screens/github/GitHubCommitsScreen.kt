@@ -60,8 +60,8 @@ fun GitHubCommitsScreen(
 
 @Composable
 private fun CommitsList(
-  modifier: Modifier = Modifier,
-  items: List<Commit>
+  items: List<Commit>,
+  modifier: Modifier = Modifier
 ) {
   LazyColumn(
     modifier = modifier
@@ -73,10 +73,22 @@ private fun CommitsList(
           end = 12.dp,
           bottom = 5.dp
         ),
+        colors = CardDefaults.cardColors(
+          containerColor = MaterialTheme.colorScheme.surfaceContainerLow
+        )
         listLength = items.size - 1,
         currentValue = index
       ) {
-        CommitItem(commit = item)
+        val uriHandler = LocalUriHandler.current
+        CommitItem(
+          modifier = Modifier
+            .fillMaxWidth()
+            .clickable {
+              uriHandler.openUri(commit.url) 
+            }
+            .padding(20.dp)
+          commit = item
+        )
       }
     }
   }
@@ -84,17 +96,12 @@ private fun CommitsList(
 
 @Composable
 private fun CommitItem(
-  commit: Commit
+  commit: Commit,
+  modifier: Modifier = Modifier
 ) {
-  val uriHandler = LocalUriHandler.current
   Column(
     verticalArrangement = Arrangement.spacedBy(10.dp),
-    modifier = Modifier
-      .fillMaxWidth()
-      .clickable {
-        uriHandler.openUri(commit.url) 
-      }
-      .padding(20.dp)
+    modifier = modifier
   ) {
     Row(
       horizontalArrangement = Arrangement.spacedBy(8.dp),
