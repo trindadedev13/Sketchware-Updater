@@ -84,9 +84,9 @@ private fun CommitsList(
           modifier = Modifier
             .fillMaxWidth()
             .clickable {
-              uriHandler.openUri(commit.url) 
+              uriHandler.openUri(item.url) 
             }
-            .padding(20.dp)
+            .padding(20.dp),
           commit = item
         )
       }
